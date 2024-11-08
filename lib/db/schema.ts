@@ -19,6 +19,13 @@ export const users = pgTable('users', {
   deletedAt: timestamp('deleted_at'),
 });
 
+export const home = pgTable('home', {
+  id: integer('id').primaryKey(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+  // Add other fields as necessary
+});
+
 export const teams = pgTable('teams', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 100 }).notNull(),
